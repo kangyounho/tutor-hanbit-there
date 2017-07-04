@@ -3,6 +3,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackIncludeAssetsPlugin = require('html-webpack-include-assets-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 function getEntry(pages) {
     var entryFiles = {};
@@ -30,14 +31,6 @@ function getHtmlPlugins(pages) {
                 preserveLineBreaks: false
             }
         }));
-
-        if (page.css) {
-            plugins.push(new HtmlWebpackIncludeAssetsPlugin({
-                files: [page.html + '.html'],
-                assets: ['css/' + page.css + '.css'],
-                append: true
-            }));
-        }
     }
 
     return plugins;
@@ -67,13 +60,14 @@ function getPlugins(pages) {
             $: "jquery",
             jQuery: "jquery"
         }),
+        new ExtractTextPlugin('css/[name].[chunkhash].css'),
         new HtmlWebpackIncludeAssetsPlugin({
-            assets: ['vendor/bootstrap/css/bootstrap.min.css'],
+            assets: ['vendor/font-awesome/css/font-awesome.min.css'],
             append: false
         }),
         new HtmlWebpackIncludeAssetsPlugin({
-            assets: ['vendor/font-awesome/css/font-awesome.min.css'],
-            append: true
+            assets: ['vendor/bootstrap/css/bootstrap.min.css'],
+            append: false
         })
     ];
 
