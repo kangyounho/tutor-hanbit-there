@@ -1,6 +1,42 @@
 @import 'common.less';
 
 .ht-section-main {
+  position: relative;
   height: 500px;
   background-image: url(../img/section-main.jpg);
+  background-size: cover;
+  background-position: 50% 25%;
+  color: #fff;
+  text-align: center;
+}
+
+.ht-main-text {
+  margin-top: 150px;
+  font-size: 45px;
+  letter-spacing: -2px;
+}
+
+.ht-sub-text {
+  padding: 20px 0px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.ht-search-box {
+  position: relative;
+  display: inline-block;
+}
+
+.ht-search-main {
+  width: 650px;
+  padding: 20px 60px 20px 20px;
+  color: #666;
+}
+
+.ht-search-icon {
+  position: absolute;
+  top: 12px;
+  right: 18px;
+  color: @main-color;
+  font-size: 35px;
 }
