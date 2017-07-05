@@ -118,3 +118,112 @@
 .ht-highlight {
   color: @main-color;
 }
+
+.ht-section-contents {
+  width: 970px;
+  margin: 0px auto;
+}
+
+.ht-hot-area {
+  height: 600px;
+}
+
+.ht-hot-area > li {
+  position: relative;
+  float: left;
+  display: inline-block;
+  width: 50%;
+  height: 50%;
+  background-size: cover;
+  color: #fff;
+  font-size: 35px;
+  line-height: 130%;
+  letter-spacing: -4px;
+  cursor: pointer;
+}
+
+.ht-hot-area > li > .dark-layer {
+  padding: 20px;
+}
+
+.ht-hot-area > li > .dark-layer:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+@section-item-border: solid 5px #fff;
+
+.ht-hot-area > li:first-child {
+  border-right: @section-item-border;
+  height: 100%;
+}
+
+.ht-hot-area > li:nth-child(2) {
+  border-bottom: @section-item-border;
+}
+
+.ht-hot-activity {
+  margin-top: 5px;
+}
+
+.ht-hot-activity > li {
+  position: relative;
+  display: inline-block;
+  width: calc(100% / 3);
+  height: 300px;
+  background-size: cover;
+  cursor: pointer;
+}
+
+.ht-hot-activity > li > .dark-layer:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.ht-section-items > li {
+  border-right: @section-item-border;
+}
+
+.ht-section-items > li:nth-child(3n) {
+  border-right: 0;
+}
+
+.ht-item-text {
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  color: #fff;
+}
+
+.ht-item-quick {
+  font-weight: bold;
+  letter-spacing: -1px;
+}
+
+.ht-item-quick .fa {
+  width: 20px;
+  height: 20px;
+  background-color: @main-color;
+  text-align: center;
+  line-height: 20px;
+}
+
+.ht-item-title {
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: -1px;
+}
+
+.ht-item-from {
+  color: #ccc;
+}
+
+.ht-item-price {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.ht-item-org-price {
+  color: #ccc;
+  font-size: 16px;
+  font-weight: normal;
+  text-decoration: line-through;
+}
