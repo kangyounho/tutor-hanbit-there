@@ -1,7 +1,9 @@
 @font-color: #333;
 @main-color: #b666ff;
+@body-min-width: 1000px;
 
 body {
+  min-width: @body-min-width;
   padding-top: @header-height;
   color: @font-color;
 }
@@ -27,6 +29,7 @@ header {
   position: fixed;
   top: 0px;
   left: 0px;
+  min-width: @body-min-width;
   width: 100%;
   height: @header-height;
   background-color: #fff;
