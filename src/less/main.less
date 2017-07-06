@@ -120,6 +120,7 @@
 }
 
 .ht-section-contents {
+  position: relative;
   width: 970px;
   margin: 0px auto;
 }
@@ -249,4 +250,64 @@
   text-align: center;
   line-height: 50px;
   opacity: 0.8;
+}
+
+.ht-view-all {
+  position: absolute;
+  top: -40px;
+  right: 0px;
+  color: #666;
+  font-size: 13px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.ht-view-all:hover {
+  color: @main-color;
+}
+
+.ht-travel > li {
+  position: relative;
+  height: 400px;
+  background-size: cover;
+  background-position: 50% 50%;
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+}
+
+.ht-travel-header {
+  margin-top: 20px;
+}
+
+.ht-travel-title {
+  margin-top: 110px;
+  font-size: 25px;
+  letter-spacing: -2px;
+}
+
+.ht-travel-editor {
+  margin-top: 40px;
+}
+
+.ht-travel > li > .dark-layer {
+  transition: all .5s;
+
+  .ht-travel-sub-title {
+    height: 0px;
+    margin-top: 0px;
+    opacity: 0;
+    transition: all .5s;
+  }
+}
+
+.ht-travel > li > .dark-layer:hover {
+  background-color: rgba(0, 123, 40, 0.4);
+
+  .ht-travel-sub-title {
+    height: 30px;
+    margin-top: 20px;
+    opacity: 0.8;
+  }
 }
