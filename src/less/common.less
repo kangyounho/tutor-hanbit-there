@@ -56,15 +56,19 @@ header {
 }
 
 .header-menu > li {
+  position: relative;
   display: inline-block;
-  padding: 0px 40px;
   color: #999;
   font-weight: bold;
   line-height: @header-height;
+}
+
+.header-menu-text {
+  padding: 0px 40px;
   cursor: pointer;
 }
 
-.header-menu > li:hover {
+.header-menu-text:hover {
   color: @main-color;
 }
 
@@ -81,6 +85,24 @@ header {
 
 .header-btn-member:hover {
   opacity: 0.5;
+}
+
+@header-sub-menu-width: 130px;
+
+.header-sub-menu {
+  position: absolute;
+  display: none;
+  top: 100%;
+  left: 0px;
+  width: calc(@header-sub-menu-width * 5);
+  background-color: #fff;
+}
+
+.header-sub-menu > li {
+  display: inline-block;
+  width: @header-sub-menu-width;
+  padding: 15px;
+  line-height: 100%;
 }
 
 @footer-bg-color: #2d2e2e;
