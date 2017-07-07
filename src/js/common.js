@@ -1,4 +1,4 @@
-var menus = require('./menu');
+var menus = require('./model/menu');
 
 function initMenu() {
     for (var i=0; i<menus.length; i++) {
