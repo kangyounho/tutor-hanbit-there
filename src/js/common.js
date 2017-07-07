@@ -1,3 +1,16 @@
+var menus = require('./menu');
+
+function initMenu() {
+    for (var i=0; i<menus.length; i++) {
+        var template = require('../template/header-menu.hbs');
+        var menuHtml = template(menus[i]);
+
+        $('.header-menu').append(menuHtml);
+    }
+}
+
+initMenu();
+
 $('.header-menu > li').on('mouseover', function() {
     var subMenu = $(this).find('.header-sub-menu');
     var subMenuItemWidth = subMenu.find('li').outerWidth();
