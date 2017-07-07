@@ -1,8 +1,11 @@
 var menus = require('./model/menu');
 
 function initMenu() {
+    var template = require('../template/header-menu.hbs');
+
+    $('.header-menu').empty();
+
     for (var i=0; i<menus.length; i++) {
-        var template = require('../template/header-menu.hbs');
         var menuHtml = template(menus[i]);
 
         $('.header-menu').append(menuHtml);

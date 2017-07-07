@@ -7,9 +7,9 @@ var hotActivities = require('./model/hot-activities');
 var bestActivities = require('./model/best-activities');
 
 function initHotActivities(hotActivities) {
-    $('.ht-hot-activity').empty();
-
     var template = require('../template/main/activity.hbs');
+
+    $('.ht-hot-activity').empty();
 
     for (var i=0; i<hotActivities.length; i++) {
         var html = template(hotActivities[i]);
@@ -19,9 +19,9 @@ function initHotActivities(hotActivities) {
 }
 
 function initBestActivities(bestActivities) {
-    $('.ht-best-activity').empty();
-
     var template = require('../template/main/activity.hbs');
+
+    $('.ht-best-activity').empty();
 
     for (var i=0; i<bestActivities.length; i++) {
         bestActivities[i].rank = i + 1;
