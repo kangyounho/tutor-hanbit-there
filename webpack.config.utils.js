@@ -6,7 +6,9 @@ const HtmlWebpackIncludeAssetsPlugin = require('html-webpack-include-assets-plug
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 function getEntry(pages) {
-    var entryFiles = {};
+    var entryFiles = {
+        vendor: ['jquery', 'bootstrap']
+    };
 
     for (var i=0; i<pages.length; i++) {
         var page = pages[i];
@@ -25,7 +27,7 @@ function getHtmlPlugins(pages) {
         plugins.push(new HtmlWebpackPlugin({
             filename: page.html + '.html',
             template: 'src/' + page.html + '.hbs',
-            chunks: [page.script],
+            chunks: ['vendor', page.script],
             minify: {
                 collapseWhitespace: true,
                 preserveLineBreaks: false
@@ -68,6 +70,11 @@ function getPlugins(pages) {
         new HtmlWebpackIncludeAssetsPlugin({
             assets: ['vendor/bootstrap/css/bootstrap.min.css'],
             append: false
+        }),
+        new webpack.optimize.CommonsChunkPlugin({
+            name: 'vendor',
+            filename: 'js/vendor.bundle.js',
+            minChunks: Infinity
         })
     ];
 
