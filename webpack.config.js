@@ -40,6 +40,7 @@ module.exports = {
             loader: 'handlebars-loader'
         }]
     },
+    devtool: 'source-map',
     devServer: {
         contentBase: './dist',
         port: port.web,

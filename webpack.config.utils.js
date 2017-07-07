@@ -75,6 +75,9 @@ function getPlugins(pages) {
             name: 'vendor',
             filename: 'js/vendor.bundle.js',
             minChunks: Infinity
+        }),
+        new webpack.optimize.UglifyJsPlugin({
+            sourceMap: true
         })
     ];
 
