@@ -43,8 +43,27 @@ $('.header-btn-member').on('click', function() {
     $('body').append('<div class="overlay-layer dark-layer"></div>');
     $('body').css('overflow', 'hidden');
 
-    $('.overlay-layer').on('click', function() {
-        $(this).remove();
-        $('body').css('overflow', 'auto');
+    var memberLayer = require('../template/member-layer.hbs');
+
+    $('body').append(memberLayer);
+
+    $('.ht-member-layer').animate({
+        right: '0px'
+    }, {
+        duration: 500,
+        complete: function() {
+            $('.overlay-layer').on('click', function() {
+                $('.ht-member-layer').animate({
+                   right: '-333px'
+                }, {
+                    duration: 500,
+                    complete: function() {
+                        $('.ht-member-layer').remove();
+                        $('.overlay-layer').remove();
+                        $('body').css('overflow', 'auto');
+                    }
+                });
+            });
+        }
     });
 });
