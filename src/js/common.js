@@ -47,6 +47,11 @@ $('.header-btn-member').on('click', function() {
 
     $('body').append(memberLayer);
 
+    $('.ht-member-toggle').on('click', function() {
+        $('.ht-sign-in').toggle();
+        $('.ht-sign-up').toggle();
+    });
+
     $('.ht-member-layer').animate({
         right: '0px'
     }, {
