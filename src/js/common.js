@@ -38,3 +38,13 @@ $('.header-menu > li').on('mouseover', function() {
 $('.header-menu > li').on('mouseout', function() {
     $(this).find('.header-sub-menu').hide();
 });
+
+$('.header-btn-member').on('click', function() {
+    $('body').append('<div class="overlay-layer dark-layer"></div>');
+    $('body').css('overflow', 'hidden');
+
+    $('.overlay-layer').on('click', function() {
+        $(this).remove();
+        $('body').css('overflow', 'auto');
+    });
+});
