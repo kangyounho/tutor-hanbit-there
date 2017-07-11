@@ -19,7 +19,9 @@ $('.header-logo').on('click', function() {
 });
 
 $('.header-sub-menu > li').on('click', function() {
-    location.href = './theres.html';
+    var theresId = $(this).attr('theres-id');
+
+    location.href = './theres.html?id=' + theresId;
 });
 
 $('.header-menu > li').on('mouseover', function() {
