@@ -14,6 +14,14 @@ function initMenu() {
 
 initMenu();
 
+$('.header-logo').on('click', function() {
+    location.href = './';
+});
+
+$('.header-sub-menu > li').on('click', function() {
+    location.href = './theres.html';
+});
+
 $('.header-menu > li').on('mouseover', function() {
     var subMenu = $(this).find('.header-sub-menu');
     var subMenuItemWidth = subMenu.find('li').outerWidth();

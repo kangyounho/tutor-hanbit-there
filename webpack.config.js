@@ -11,6 +11,9 @@ const pages = [{
     html: 'index',
     script: 'main',
 }, {
+    html: 'theres',
+    script: 'theres'
+}, {
     html: 'sub',
     script: 'sub',
 }];
@@ -34,7 +37,8 @@ module.exports = {
                 }, {
                     loader: 'less-loader'
                 }]
-            })
+            }),
+            exclude: /node_modules/
         }, {
             test: /\.hbs$/,
             loader: 'handlebars-loader',
@@ -43,7 +47,6 @@ module.exports = {
             }
         }]
     },
-    devtool: 'source-map',
     devServer: {
         contentBase: './dist',
         port: port.web,
