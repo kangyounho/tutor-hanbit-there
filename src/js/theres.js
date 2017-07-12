@@ -4,6 +4,8 @@ require('../less/theres.less');
 var common = require('./common');
 var tab = require('./ht-tab');
 
+var moment = require('moment-timezone');
+
 var URLSearchParams = require('url-search-params');
 var params = new URLSearchParams(location.search);
 var theresId = params.get('id');
@@ -25,6 +27,14 @@ var areaInfoHtml = areaInfoTemplate(model);
 
 $('.ht-area-info').html(areaInfoHtml);
 
+var areaDatetimeTemplate = require('../template/theres/area-datetime.hbs');
+var areaDatetimeHtml = areaDatetimeTemplate({
+    time: moment().tz(model.timezone).format('hh:mm'),
+    apm: moment().tz(model.timezone).format('a'),
+    date: moment().tz(model.timezone).format('YYYY.MM.DD')
+});
+
+$('.ht-weather-datetime').html(areaDatetimeHtml);
 
 
 
